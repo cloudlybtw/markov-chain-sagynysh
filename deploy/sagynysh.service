@@ -1,0 +1,26 @@
+[Unit]
+Description=Sagynysh Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sagynysh
+Group=sagynysh
+WorkingDirectory=/opt/sagynysh
+EnvironmentFile=/opt/sagynysh/.env
+ExecStart=/opt/sagynysh/.venv/bin/python -m sagynysh
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Sandboxing — this process only needs to write to data/
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/sagynysh/data
+
+[Install]
+WantedBy=multi-user.target

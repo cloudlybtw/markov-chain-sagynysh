@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+data/*.db
+data/*.db-journal
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+ChatExport*/
+
+# Local credentials and environment variants
+.env*
+*.env
+*.env.*
+!/.env.example
+
+# Other local virtual environments
+venv/
+env/
+ENV/
+
+# Runtime databases, sidecars, backups, and logs
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+
+# Local Codex state and credential-bearing instruction files
+/config/
+/AGENTS.md
+/CLAUDE.md
